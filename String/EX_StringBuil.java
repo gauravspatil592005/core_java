@@ -4,6 +4,7 @@ StringBuilder sb= new StringBuilder("gaurav");
 sb.append(" patil");
 sb.insert(0,"hello ");
 sb.delete(4,6);
+sb.isEmpty();
 System.out.println(sb.reverse());
 System.out.println(sb.length());
 
