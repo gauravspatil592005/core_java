@@ -14,7 +14,7 @@ class Employee {
     }
 }
 
-    public class  {
+    public class cop {
         public static void main(String[] args) {
             Employee obj = new Employee("yogesh", 8000.59);
             obj.display();
