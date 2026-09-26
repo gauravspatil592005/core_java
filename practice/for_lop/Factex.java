@@ -5,12 +5,11 @@ public class Factex {
         int result;
         for (int i = 1; i <= 100; i++) {
             fact = fact * i;
-          
 
             System.out.println(fact);
 
         }
-          result + num;
-          System.out.println(result);
+        result = num * fact;
+        System.out.println(result);
     }
 }
