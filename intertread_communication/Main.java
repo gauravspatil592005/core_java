@@ -1,27 +1,27 @@
 
 class Customer {
-	int amount = 10000;
+	int balance = 10000;
 
 	// creating a withdraw() method which calls the wait() method
 	synchronized void withdraw(int amount) {
-		System.out.println("going to withdraw...");
+		System.out.println("going to withdraw..." + amount);
 
-		if (this.amount < amount) {
-			System.out.println("Less balance; waiting for deposit...");
+		if (balance < amount) {
+			System.out.println("Less balance; waiting for deposit..." + amount);
 			try {
 				wait();
 			} catch (Exception e) {
 			}
 		}
-		this.amount -= amount;
-		System.out.println("withdraw completed...");
+		this.balance -= amount;
+		System.out.println("withdraw completed..." + balance);
 	}
 
 	// creating a deposit() method with calls the notify() method
 	synchronized void deposit(int amount) {
-		System.out.println("going to deposit...");
-		this.amount += amount;
-		System.out.println("deposit completed... ");
+		System.out.println("going to deposit..." + balance);
+		this.balance += amount;
+		System.out.println("deposit completed... " + balance);
 		notify();
 	}
 }
@@ -39,5 +39,7 @@ public class Main {
 				c.deposit(10000);
 			}
 		}.start();
+		// c.withdraw(15000);
+		// c.deposit(20000);
 	}
 }
